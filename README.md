@@ -157,3 +157,32 @@ Response
     }
 }
 ```
+Creating Mutations with query variables, here we need to consider that `CourseInput` is an Objet
+```json
+// GraphiQL
+
+mutation($entrada: CourseInput) {
+  addCourse(input: $entrada){
+    title
+  }
+}
+
+// Query variables
+{
+  "entrada": {
+    "title": "Hola Curso de Golang3",
+    "views": 16111
+  }
+}
+```
+Example of return
+```json
+{
+  "data": {
+    "addCourse": {
+      "title": "Hola Curso de Golang3"
+    }
+  }
+}
+```
+
