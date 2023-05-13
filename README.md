@@ -185,4 +185,36 @@ Example of return
   }
 }
 ```
+Creating Mutations for method DELETE
+```json
+// GraphiQL
 
+mutation($id: ID!) {
+    deleteCourse(id: $id){
+        message
+    }
+}
+
+
+// Query variables
+{
+  "id": 2
+} 
+
+// o
+mutation{
+    deleteCourse(id: "2"){
+        message
+    }
+}
+```
+Example of return
+```json
+{
+    "data": {
+        "deleteCourse": {
+            "message": "El curso con el id: 2 fue eliminado"
+        }
+    }
+}
+```
